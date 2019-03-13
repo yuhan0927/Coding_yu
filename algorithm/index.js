@@ -31,7 +31,7 @@ tail = 9; // 指针  尾部指针
 while(head<tail){// 拿到一个正确的数字，操作原来的两个数字
     qq.push(enc_qq[head]);
     head++;
-    //  第二个数移动到尾部
+    //  第二个数移动到尾部  hahahhaah
     enc_qq[tail] = enc_qq[head]
     tail++;
     head++;
