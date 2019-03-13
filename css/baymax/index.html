@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS3电影-大白</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    height: 100vh;
+    background:radial-gradient(circle at center, #ffff, #fff 50%, #aaa); /*渐变*/
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /* background-color:red;
+     */
+  }
+  .baymax {
+    border-bottom: 1.5em solid #000000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -40%);  /*%  移动相对于自身元素大小的百分之多少*/
+  }
+  .baymax:before ,.baymax:after{
+    content: "";
+    background-color: #000000;
+    width: 12em;
+    height: 12em;
+    position: absolute;
+    top: -6em;
+    border-radius: 50%;
+    background:linear-gradient(to bottom,#efefef,#efefef 50%,#000 50%,#000);  /*线性渐变*/
+    background-position:0 -100%;
+    background-size: 200% 200%;   /*背景的大小*/
+  }
+    /* 左眼 */
+  .baymax::before{
+    left: -9em;
+    transform: skewX(4deg);
+    animation: blink 6s infinite;
+  }
+  /* 右眼 */
+  .baymax:after {
+       right: -9em;
+       transform: skewX(-4deg);
+       animation: blink 6s .1s infinite;   /* 第一个值 需要绑定到选择器的@keyframes名称 
+        第二个值是规定完成动画所需要的时间  第三个值动画开始之前的延迟  第四个值执行几次 infinite表示无限执行
+        animation-direction 定义是否应该轮流反向播放动画  normal	默认值。动画应该正常播放。alternate	动画应该轮流反向播放。*/
+  }
+  @keyframes blink{
+      0%,50%{
+        background-position: 0 100%;
+      }
+      85%,95%{
+          background-position: 0 75%;
+      }
+      100%{
+          background-position: 0 100%;
+      }
+  }
+  </style>
+</head>
+<body>
+  <div class="baymax">
+  </div>
+</body>
+</html>
