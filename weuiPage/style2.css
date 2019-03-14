@@ -83,3 +83,7 @@ html,body{
 .active2{
     background-color:green !important;
 }
+#iosDialog2{
+    display: none;
+    opacity: 0;
+}
