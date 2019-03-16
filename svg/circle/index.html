@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .circle{
+            fill:none;
+            stroke-dasharray:500 1069;
+            stroke-width:50;
+            animation: stroke 2s infinite alternate;
+        }
+        .circle-1{
+            stroke:rgb(221, 224, 46);
+        }
+        .circle-2{
+            stroke:#00A5E0;
+             animation-delay: -1.5s
+        }
+        .circle-3{
+            stroke:rgb(189, 21, 119);
+             animation-delay: -3s;
+        }
+        .circle-4{
+            stroke:rgb(224, 22, 49);
+             animation-delay: -4.5s;
+        }
+        @keyframes stroke{
+            100%{
+               stroke-dashoffset: -1500;
+            }
+        }
+    </style>
+</head>
+<body>
+        <svg width="440" height="440">
+                <circle cx="220" cy="220" r="170"  class="circle circle-1"></circle>
+                <circle cx="220" cy="220" r="170"  class="circle circle-2" ></circle>
+                <circle cx="220" cy="220" r="170"  class="circle circle-3" ></circle>
+                <circle cx="220" cy="220" r="170"  class="circle circle-4" ></circle>
+            </svg>
+</body>
+</html>
