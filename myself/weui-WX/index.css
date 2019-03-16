@@ -1,0 +1,28 @@
+.container, .page{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.weui-flex{
+    height: 2.87647059em;
+    background: rgb(34, 29, 29);
+    color: white;
+
+}
+.weui-flex__items{
+    position: absolute;
+    /* height: 1.17647059em; */
+    padding: 8px 15px;
+}
+.weui-flex__item{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    font-size: 18px;
+    font-weight: 200;
+}
+.weui-cells{
+    margin: 0;;
+}
