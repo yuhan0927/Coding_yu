@@ -5,16 +5,29 @@
     bottom: 0;
     left: 0;
 }
+.weui-tab__panel{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 .weui-flex{
+    position: relative;
     height: 2.87647059em;
     background: rgb(34, 29, 29);
     color: white;
+    top: 0;
+    display: flex;
+    width: 100%;
+    z-index: 500;
 
 }
 .weui-flex__items{
-    position: absolute;
+    /* position: absolute; */
     /* height: 1.17647059em; */
     padding: 8px 15px;
+    width: 100%;
+    /* display:flex; */
+    /* z-index: 500; */
 }
 .weui-flex__item{
     height: 100%;
@@ -23,6 +36,14 @@
     font-size: 18px;
     font-weight: 200;
 }
+.placeholder .img{
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+}
+.img .img1{
+    margin-right: 25px;
+}
 .weui-cells{
-    margin: 0;;
+    margin: 0;
 }
