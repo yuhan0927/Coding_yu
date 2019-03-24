@@ -410,21 +410,14 @@
     height: 440px;
     background: url(./images/沈大师大_meitu_3.png);
     background-size: 100%;
+    margin-bottom: 5px;
 }
-.photos .section .fg{
-    position: absolute;
-    width: 470px;
-    height: 340px;
-    background-color: rgba(0,0,0,.6);
-    top: -25px;
-    left: 5px;
-}
-.photos .section .fg .title{
-    width:128px;
-    height:16px;
-    font-size:20px;
-    font-weight:300;
-    color:rgba(255,255,255,1);
-    line-height:32px;
-    margin: 160px auto 0;
+/*  */
+.contacts{
+    width: 100%;
+    height: 700px;
+    border-top: 1px solid rgba(20,20,20,.1);
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 70px 0;
 }
