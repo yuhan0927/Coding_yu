@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 为实例服务
+        function Okaku(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+        var obj =new Object();
+        Okaku.call(obj,"徐梦瑶",17);
+        var yh = new Okaku("颜欢",17);
+        // new Okaku()?
+
+    </script>
+</body>
+</html>
