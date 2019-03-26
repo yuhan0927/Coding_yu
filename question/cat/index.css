@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+.box{
+    position: relative;
+    width: 700px;
+    height: 700px;
+    border: 1px solid #000;
+    background: url(./dog.jpg) no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+}
+.cat_ct{
+    height: 203px;
+    width: 117px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.cat_st{
+    height: 203px;
+    width: 117px;
+    background: url(./maoshenti.png) no-repeat;
+    position: absolute;
+    z-index: 999;
+}
+.cat_yj1{
+    width: 4px;
+    height: 4px;
+    background: url(./maoyan1.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 77px;
+    bottom: 24px;
+    border-radius: 50%
+}
+.cat_yj2{
+    width: 4px;
+    height: 4px;
+    background: url(./maoyan2.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 22px;
+    bottom: 16px;
+    border-radius: 50%
+}
+.cat_yj1:before ,.cat_yj2:after{
+    content: "";
+    background-color: #000000;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    /* top: -2px; */
+    border-radius: 50%;
+    background-size: 100% 100%;   /*背景的大小*/
+    animation: blink 3s infinite ease;
+  }
+  @keyframes blink{
+    0%{
+      top: -4px
+    }
+    50%{
+        top: 0px;
+    }
+    100%{
+        top: -4px;
+    }
+}
+.cat_mz{
+    width: 4px;
+    height: 2px;
+    background: url(./maozui.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 80px;
+    bottom: 12px;
+}
+.cat_mw{
+    width: 64px;
+    height: 194px;
+    background: url(./maowei.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: -11px;
+    top:-183px;
+    animation: moveCt 3s infinite linear;
+    transform-origin:32px 194px ;
+}
+.cat_zhua{
+    width: 34px;
+    height: 81px;
+    background: url(./maozhua.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: -64px;
+    right: 16px;
+    transform-origin:0 0 ;
+    animation: moveCt 3s infinite linear;
+}
+@keyframes moveCt{
+    0%{
+        transform: rotateZ(0deg)
+    }
+    25%{
+        transform: rotateZ(5deg)
+    }
+    50%{
+        transform: rotateZ(0deg)
+    }
+    75%{
+        transform: rotateZ(-5deg)
+    }
+    100%{
+        transform: rotateY(0deg)
+    }
+}
