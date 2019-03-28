@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类数组</title>
+<body>
+    <ul id="lists">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        // 类数组
+        const lis = document.querySelectorAll('#lists li')
+        console.log(lis);
+        // 类数据转为真数组
+        const lis_array = Array.from(lis);  //Array.form 静态方法
+        const lisHTMLContent = lis_array.map(liNode => liNode.innerHTML);
+        console.log(lisHTMLContent);
+
+        // 真数组
+        const arr = [1,2,3]
+
+        // function foo(){
+        //     console.log(arguments);
+        //     const aaaa = Array.from(arguments);
+        //     const bbbb = aaaa.map(b=>b*2);
+        //     console.log(bbbb);
+        // }
+        // foo(1,2,3,4,5);
+
+
+        
+        function foo(){
+            console.log(arguments);
+            const aaaa = Array.from(arguments);
+            const bbbb = aaaa.map((h)=>{
+                if(h>=10){
+                    return h*3;
+                }
+                else return h;
+            });
+            console.log(bbbb);
+        }
+        foo(1,2,15,30);
+        var bar = foo (1,8,12,13);
+        console.log(bar);
+    </script>
+</body>
+</html>
