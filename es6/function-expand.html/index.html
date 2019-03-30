@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //es5
+        function Person(nickName){
+            // 方法1
+            // if(!nickName){
+            //     nickName = '未知昵称';
+            // }
+            this.nickName = nickName||'未知昵称' ;//方法2
+        }
+        // es6
+        function Person(nickName = '未知昵称'){
+            this.nickName = nickName
+        }
+        const p1 = new Person('nickName');
+        // p1{nickName:'nickName'}
+        const p2 = new Person();
+        // p2{nickName:'未知昵称'}
+
+
+        // ...称为rest 参数  形式(...变量名) 获取多余的参数  变量名是数组  把多余的变量放入这个数组当中
+        // 如果是(a,...args) 那么args中存入的是4，6，8
+        //rest 参数 只能放在最后位置  (a,...args,b)错误
+        function sum (...args) {
+            // Array.from(arguments)
+            console.log(args);
+        }
+        sum(2,4,6,8);
+    </script>
+</body>
+</html>
