@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>alloyFinger 练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .imgBox {
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #000;
+        }
+
+        img {
+            width: 160px;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .swipeBox {
+            font-size: 0;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            position: relative;
+            border: 2px solid #ccc;
+            overflow: hidden;
+        }
+
+        #swipeScroll {
+            width: 480px;
+            height: 160px;
+            word-spacing: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="example">
+        <div class="title">tap</div>
+        <div class="imgBox tapBox">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555338334845&di=c8fda3b52187f49935d027f131a097f5&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201608%2F22%2F20160822002022_AXduP.jpeg"
+                alt="">
+        </div>
+
+        <div class="title">pinch</div>
+        <div class="imgBox">
+            <img id="pinchImage"
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555338334845&di=c8fda3b52187f49935d027f131a097f5&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201608%2F22%2F20160822002022_AXduP.jpeg"
+                alt="">
+        </div>
+
+        <div class="title">rotate</div>
+        <div class="imgBox">
+            <img id="rotateImage"
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555338334845&di=c8fda3b52187f49935d027f131a097f5&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201608%2F22%2F20160822002022_AXduP.jpeg"
+                alt="">
+        </div>
+
+        <div class="title">pinch+rotate</div>
+        <div class="imgBox">
+            <img id="pinchRotateImage"
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555338334845&di=c8fda3b52187f49935d027f131a097f5&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201608%2F22%2F20160822002022_AXduP.jpeg"
+                alt="">
+        </div>
+
+        <div class="title">pressMove</div>
+        <div class="imgBox">
+            <img id="pressMoveImage"
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555338334845&di=c8fda3b52187f49935d027f131a097f5&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201608%2F22%2F20160822002022_AXduP.jpeg"
+                alt="">
+        </div>
+
+        <div class="title">swipe</div>
+        <div class="imgBox">
+            <div class="swipeBox">
+                <div class="scroll" id="swipeScroll">
+                    <img id="pressMoveImage"
+                        src="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1555333735&di=916b232e1c330caef017c6b985f82151&src=http://www.jz5u.com/Soft/UploadPic/Upload/20175251446437606.jpg"
+                        alt="">
+                    <img id="pressMoveImage"
+                        src="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1555333735&di=54c0f771664307338111a7d019ce6553&src=http://image.biaobaiju.com/uploads/20180802/00/1533142046-zZnpFtWevT.jpg"
+                        alt="">
+                    <img id="pressMoveImage"
+                        src="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1555333735&di=6f96c69afa0c804f1a0f79d6677d06ae&src=http://img5.duitang.com/uploads/item/201512/24/20151224235608_a2zhc.thumb.700_0.jpeg"
+                        alt="">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./vconsole.min.js"></script>
+    <script src="./alloy_finger.js"></script>
+    <script>
+        new VConsole();
+        function getNumberByTransformAttribute(str) {
+            const initArr = str.split(/[\(\)]/);
+            return parseInt(initArr[1]);
+        }
+        new AlloyFinger(
+            document.querySelector('.tapBox'),
+            {
+                tap: function () {
+                    console.log('tap');
+                },
+                doubleTap: function () {
+                    console.log('doubleTap');
+                }
+            }
+        )
+        const pinchImage = document.getElementById('pinchImage');
+        new AlloyFinger(
+            pinchImage,
+            {
+                pinch: function (evt) {
+                    pinchImage.style.transform = `scale(${evt.zoom})`;
+                }
+            }
+        )
+        // rotate
+        const rotateImage = document.getElementById('rotateImage');
+        new AlloyFinger(
+            rotateImage, {
+                rotate: function (evt) {
+                    console.log(evt.angle);
+                    const rotateStr = rotateImage.style.transform || 'rotate(0)';
+                    const rotateStrSplit = rotateStr.split(/[\(\)]/);
+                    let deg = parseInt(rotateStrSplit[1]);
+                    rotateImage.style.transform = `rotate(${evt.angle + deg}deg)`
+                }
+            }
+        )
+        // pinchRotate
+        const pinchRotateImage = document.getElementById('pinchRotateImage');
+        new AlloyFinger(
+            pinchRotateImage, {
+                pinch: function (evt) {
+                    const initStr = pinchRotateImage.style.transform || 'rotate(0)';
+                    const initStyleArr = initStr.split(' ');
+                    pinchRotateImage.style.transform = `${initStyleArr[0]} scale(${evt.zoom})`
+                },
+                rotate: function (evt) {
+                    const initStr = pinchRotateImage.style.transform || 'rotate(0)';
+                    const initStyleArr = initStr.split(' ');
+                    const deg = getNumberByTransformAttribute(initStyleArr[0]);
+                    pinchRotateImage.style.transform = `rotate(${deg + evt.angle}deg) ${initStyleArr[1]}`
+                }
+            }
+        )
+        // pressMove
+        const pressMoveImage = document
+            .getElementById('pressMoveImage');
+        new AlloyFinger(
+            pressMoveImage,
+            {
+                pressMove: function (evt) {
+                    let initStr = pressMoveImage.style.transform ||
+                        'translateX(0px) translateY(0px)';
+                    // 'translateX() translateY(34px)'
+                    let initStyleArr = initStr.split(' ');
+                    let x =
+                        getNumberByTransformAttribute(initStyleArr[0]);
+                    let y =
+                        getNumberByTransformAttribute(initStyleArr[1]);
+                    pressMoveImage.style.transform =
+                        `translateX(${evt.deltaX + x}px)
+        translateY(${evt.deltaY + y}px)`;
+                }
+            }
+        )
+
+
+        // swipe
+        const swipeScroll = document
+            .getElementById('swipeScroll');
+        let currentindex = 0;
+        new AlloyFinger(
+            swipeScroll,
+            {
+                swipe: function (evt) {
+                    if (evt.direction === 'Left') {
+                        if (currentindex >= 2) return false;
+                        currentindex++;
+                        let xStr = swipeScroll.style.transform
+                            || 'translateX(0px)';
+                        let x = getNumberByTransformAttribute(xStr);
+                        swipeScroll.style.transform = `translateX(${-160 + x}px)`
+                    } else if (evt.direction === 'Right') {
+                        if (currentindex <= 0) return false;
+                        currentindex--;
+                        let xStr = swipeScroll.style.transform
+                            || 'translateX(0px)';
+                        let x = getNumberByTransformAttribute(xStr);
+                        swipeScroll.style.transform = `translateX(${160 + x}px)`
+                    }
+                }
+            }
+        )
+
+    </script>
+</body>
+<html>
