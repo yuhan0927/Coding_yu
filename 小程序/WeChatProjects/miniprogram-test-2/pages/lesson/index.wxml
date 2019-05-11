@@ -1,0 +1,3 @@
+<!--pages/lesson/index.wxml-->
+<text>课程</text>
+<progress></progress>
