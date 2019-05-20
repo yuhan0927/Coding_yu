@@ -1,0 +1,16 @@
+{
+  "name": "js_text",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "mocha":"mocha tests/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
