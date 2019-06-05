@@ -27,8 +27,36 @@ path: 规定 cookie 生效的路径
 /           所有的路径
 /user       /user 以及 /user/xxx
 /user/xxx   /user/xxx/ 以及下面的 /user/xxx/xx
+httpOnly: true / false. true 就不能通过 js 获取 cookie。
+max-age: 在 几秒 过后过期
 
-作用范围
+作用范围：
 path
 domain
-## locationSorage sessionStorage cookie session
+用途:会话的状态管理,保存用户的个性化设置。
+
+## session
+保存在服务器端
+靠后台语言实现
+有很多个 session
+很多个用户 sessionID
+
+~
+## koa 第三方中间件
+ctx req + res
+ctx: {
+    req,
+    res,
+}
+koa-view ejs
+往 ctx 上扩展 80%
+ctx: {
+    req,
+    res,
+    renser: () => {
+
+    }
+    调用 提供的 render()
+}
+~ 
+## locationSorage sessionStorage cookie session5 

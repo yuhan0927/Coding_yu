@@ -11,7 +11,7 @@ app.keys = session_signed_keys;
 
 const sessionConfig = {
     key:'sessionID' , //放在 cookie 里面
-    maxAge: 10000,
+    maxAge: 100009,
     rolling: true //每次响应的时候 刷新有效期
 }
 const session = koaSession(sessionConfig, app);
