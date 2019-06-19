@@ -1,0 +1,3 @@
+- App   commentLists = [] 所有的评论
+    - commentInput {username, comment}
+    - commentList [] props ->commentLists
