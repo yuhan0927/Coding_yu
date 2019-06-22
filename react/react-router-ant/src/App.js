@@ -21,8 +21,6 @@ function App() {
       <Route path="/" component={Layout}>
         {/*  */}
         <Route path="/" component={Layout}></Route>
-        <Route path="/table" component={Table}></Route>
-        <Route path="/lable" component={Lable}></Route>
       </Route>
     </Router>
   );
