@@ -10,10 +10,11 @@
 
 <body>
     <form action="">
-        name:</br> <input type="text"></br>
+        name:</br> <input type="text"></br><input type="text" maxlength="10">
         password:</br> <input type="password">
     </form>
     单选框</br>
+    <!--  -->
     <form action="">
         <input type="radio" name="sex">Male</br>
         <input type="radio" name="sex">Man</br>
@@ -47,15 +48,34 @@
         </select></br>
         <textarea name="" id="" cols="30" rows="10">woshi</textarea>
     </form>
+    <!--  -->
     <form>
         <fieldset disabled>
             <legend>个人信息</legend>
             姓名: <input type="text">
         </fieldset>
     </form>
+    <!--  -->
     <form>
         <label for="text"></label>
         <input type="text" id="text">
+    </form>
+    <form action="/demo/demo_form.asp">
+        输入(1-10之间)的数：<input type="number" name="num" min="1" max="10">
+        <input type="submit">
+    </form>
+    <!--  -->
+    <form>
+        <input list="bs">
+        <datalist id="bs">
+            <option value="111"></option>
+            <option value="222"></option>
+            <option value="33"></option>
+        </datalist>
+        <input type="date" min="1998-09-27">
+        <input type="color">
+        <!-- 输入类型 "range" 可显示为滑动控件。 -->
+        <input type="range" min="0" max="10">
     </form>
 </body>
 

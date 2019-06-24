@@ -1,5 +1,5 @@
 const app = getApp()
-import { addEmotion, geocoder, getWeather} from '../../lib/api'
+import { addEmotion, geocoder, getWeather } from '../..b/api'
 
 Page({
   data: {
@@ -13,7 +13,7 @@ Page({
   },
   onLoad() {
     let self = this
-    addEmotion('2134','shfh')
+    addEmotion('213423', 'sdsd')
     wx.getSystemInfo({
       success: (result) => {
         // console.log(result)
@@ -25,8 +25,8 @@ Page({
           paddingTop: result.statusBarHeight + 12
         })
       },
-      fail:() => {},
-      complete: () => {}
+      fail: () => { },
+      complete: () => { }
     });
     this.getLocation()
   },
@@ -40,7 +40,7 @@ Page({
     })
   },
   updateLocation(res) {
-    let { latitude: lat, longitude: lon, name} = res
+    let { latitude: lat, longitude: lon, name } = res
 
     let data = {
       lat,
@@ -56,7 +56,7 @@ Page({
   },
   openLocation() {
     wx.showToast({
-      title:'检测到您未授权使用位置权限,请先开启',
+      title: '检测到您未授权使用位置权限，请先开启',
       icon: 'none',
       duration: 3000
     })
@@ -69,11 +69,11 @@ Page({
     let fail = (e) => {
       this.setData({
         address: name || '南昌市'
-    })
-    wx.hideLoading()
+      })
+      wx.hideLoading()
     }
 
-    geocoder(lat, lon, (res)=>{
+    geocoder(lat, lon, (res) => {
       wx.hideLoading()
       let result = (res.data || {}).result
       console.log(res)
@@ -90,6 +90,6 @@ Page({
           address: name || address
         })
       }
-    },fail)
+    }, fail)
   }
 })

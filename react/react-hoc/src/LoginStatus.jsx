@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import WithLogin from './WithLogin'
 
 class LoginStatus extends Component {
     state = {  }

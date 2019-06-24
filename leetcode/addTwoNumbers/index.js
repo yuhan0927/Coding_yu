@@ -46,6 +46,7 @@ var addTwoNumbers = function(l1,l2) {
     }
     carry && (ans.push(carry));  //最后是否有进位
     console.log( ans.join(''));
+    ans.reverse();
 
     // 返回的应该也是一个结点,头结点
     let ret = [];

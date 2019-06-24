@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width: 100%;
+    height: 100%;
+}
+.sections{
+    width: 100%;
+    height: 100%;
+}
+/* 111111 */
+.section_1{
+    width: 100%;
+    height: 136px;
+    background-color: #3797f2;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 5px;
+}
+.section_1-hd{
+    position: relative;
+    width: 343px;
+    font-size: 15px;
+    line-height: 15px;
+    padding:5px 0;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    margin-bottom: 16px;
+}
+.section_1-hd::before{
+    content: '';
+    width: 10px;
+    height: 15px;
+    background: url(./左箭头.png)no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;  
+}
+.section_1-hd .right{
+    height: 25px;
+    width: 80px;
+    background-color: #24537e;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 25px;
+}
+.section_1-hd .right::before{
+    content: '';
+    width: 25px;
+    height: 25px;
+    background: url(./更多.png)no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 9px;
+}
+.section_1-hd .right::after{
+    content: '';
+    width: 25px;
+    height: 25px;
+    background: url(./圆圈.png)no-repeat;
+    background-size: contain;
+    position: absolute;  
+    right: 9px;  
+}

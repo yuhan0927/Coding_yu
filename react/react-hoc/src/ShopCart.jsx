@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import WithLogin from './WithLogin'
 
+@WithLogin
 class ShopCart extends Component {
     state = {  }
     render() { 

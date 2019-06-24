@@ -1,0 +1,20 @@
+.homepage {
+  position: relative;
+  height: 100%;
+  background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556789700383&di=6f7d41408eec656ceda80005ca0f7b53&imgtype=0&src=http%3A%2F%2Fpic4.zhimg.com%2F50%2Fv2-9183e89498a66b55456477c143afb258_hd.jpg');
+  background-size: 100% 100%;
+}
+.homepage > button {
+  /* 水平居中 */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100rpx;
+  margin: auto;
+
+  /* 按钮样式 */
+  width: 40%;
+  color: white;
+  background-color: #ff644e;
+  border-radius: 50rpx;
+}

@@ -1,0 +1,21 @@
+@import"../../wxParse/wxParse.wxss";
+page{
+   width: 100%;
+   box-sizing: border-box;
+}
+.hahah {
+  box-sizing: inherit;
+  width: 100%;
+  padding: 30rpx;
+}
+.langs_en{
+  line-height: 57rpx;
+  font-size: 31.25rpx;
+  margin-bottom: 41.67rpx;
+}
+.langs_cn{
+  color: #666666;
+  font-size: 28.125rpx;
+  line-height: 55.2rpx;
+  margin-bottom: 41.67rpx;
+}

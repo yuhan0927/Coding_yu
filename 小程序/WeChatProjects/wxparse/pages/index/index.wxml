@@ -1,0 +1,5 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="section tc">
+  <video id="myVideo" src="http://www.iqiyi.com/v_19rqv4rsks.html" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+</view>
+<view class='hahah'><template is="wxParse" data="{{wxParseData:article.nodes}}" /></view>

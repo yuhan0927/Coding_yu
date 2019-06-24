@@ -53,8 +53,8 @@ body{
 .cat_yj1:before ,.cat_yj2:after{
     content: "";
     background-color: #000000;
-    width: 4px;
-    height: 4px;
+    width: 5px;
+    height: 5px;
     position: absolute;
     /* top: -2px; */
     border-radius: 50%;
@@ -63,13 +63,13 @@ body{
   }
   @keyframes blink{
     0%{
-      top: -4px
+      top: -5px
     }
     50%{
         top: 0px;
     }
     100%{
-        top: -4px;
+        top: -5px;
     }
 }
 .cat_mz{

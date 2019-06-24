@@ -1,4 +1,4 @@
-## React
+## React 一切皆组件
 - 终端命令
 1. npm i create-react-app -g      安装react脚手架
 2. create-react-app helloreact    建立名为helloreact的模板文件
